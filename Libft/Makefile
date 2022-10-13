@@ -1,5 +1,7 @@
 NAME = libft.a
 
+BNUS = .bonus
+
 INCLUDE = -I ./
 
 SRCS = ft_bzero.c\
@@ -38,9 +40,21 @@ SRCS = ft_bzero.c\
 	   ft_putnbr_fd.c\
 	   ft_putnbr_fd.c
 
+SRCS_BONUS = ft_lstnew.c\
+			ft_lstadd_front.c\
+			ft_lstsize.c\
+			ft_lstlast.c\
+			ft_lstadd_back.c\
+			ft_lstdelone.c\
+			ft_lstclear.c\
+			ft_lstiter.c\
+			ft_lstmap.c
+
 OBJS = $(SRCS:.c=.o)
+OBJS_BONUS = $(SRCS_BONUS:.c=.o)
 
 DEPS = $(SRCS:.c=.d)
+DEPS_BONUS = $(SRCS_BONUS:.c=.d)
 
 AR = ar
 CFLAGS = -Wall -Wextra -Werror
@@ -55,11 +69,19 @@ $(NAME): $(OBJS)
 
 -include $(DEPS)
 
+bonus: $(BNUS)
+
+$(BNUS): $(OBJS) $(OBJS_BONUS)
+	$(AR) -rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+
+-include $(DEPS_BONUS)
+
 clean:
-	rm -f $(OBJS) $(DEPS)
+	rm -f $(OBJS) $(OBJS_BONUS) $(DEPS) $(DEPS_BONUS)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
+.PHONY: all bonus clean fclean re
