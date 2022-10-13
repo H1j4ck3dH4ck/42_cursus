@@ -73,6 +73,7 @@ bonus: $(BNUS)
 
 $(BNUS): $(OBJS) $(OBJS_BONUS)
 	$(AR) -rcs $(NAME) $(OBJS) $(OBJS_BONUS)
+	touch $@
 
 -include $(DEPS_BONUS)
 
