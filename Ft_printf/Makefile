@@ -26,9 +26,6 @@ OBJS = ${SRCS:.c=.o}
 
 DEPS = $(SRCS:.c=.d)
 .c.o:
-	@echo "Compilando Libft"
-	@cd $(LIBFTDIR) && $(MAKE)
-	@mv $(LIBFTDIR)$(LIBFT) $(NAME)
 	${CC} ${FLAGS} -MMD ${INCLUDE} -c $< -o $@
 
 all: ${NAME}
@@ -39,7 +36,7 @@ ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
 
 clean:
-	${RM} ${LIBFTDIR}${OBJS}${DEPS}
+	${RM} ${OBJS}${DEPS}
 	${RM} ${OBJS} ${DEPS}
 
 fclean: clean
