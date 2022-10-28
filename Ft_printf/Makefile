@@ -8,13 +8,7 @@ SRCS = ft_printf.c\
 	   ft_printhexamin.c\
 	   ft_printhexamax.c
 
-INCLUDE = -I ./
-
 CC = gcc
-
-LIBFTDIR = ./Libft/
-
-LIBFT = libft.a
 
 RM = rm -f
 
@@ -36,7 +30,6 @@ ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}
 
 clean:
-	${RM} ${OBJS}${DEPS}
 	${RM} ${OBJS} ${DEPS}
 
 fclean: clean
