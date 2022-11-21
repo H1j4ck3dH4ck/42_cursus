@@ -6,18 +6,18 @@
 /*   By: vimunoz- <vimunoz-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 17:59:04 by vimunoz-          #+#    #+#             */
-/*   Updated: 2022/11/17 15:10:15 by vimunoz-         ###   ########.fr       */
+/*   Updated: 2022/11/21 11:42:24 by vimunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char *ft_strchr(char *s,int c)
+char	*ft_strchr(char *s, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(s[i] != '\0')
+	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
 			return (&((char *)s)[i]);
@@ -25,7 +25,7 @@ char *ft_strchr(char *s,int c)
 	}
 	if ((char)c == '\0')
 		return (&((char *)s)[i]);
-	return(0);
+	return (0);
 }
 
 size_t	ft_strlen(const char *s)
@@ -43,8 +43,8 @@ size_t	ft_strlen(const char *s)
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	i;
-	void    *aux;
-	size_t  asg;
+	void	*aux;
+	size_t	asg;
 
 	asg = (count * size);
 	aux = malloc(asg);
@@ -52,8 +52,8 @@ void	*ft_calloc(size_t count, size_t size)
 		return (0);
 	i = 0;
 	while (i < asg)
-		((char *)aux) [i++] = 0;
-    return (aux);
+		((char *)aux)[i++] = 0;
+	return (aux);
 }
 
 char	*ft_free(char **buff, char **buff2)

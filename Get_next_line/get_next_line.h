@@ -6,7 +6,7 @@
 /*   By: vimunoz- <vimunoz-@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/27 16:42:32 by vimunoz-          #+#    #+#             */
-/*   Updated: 2022/11/03 18:10:19 by vimunoz-         ###   ########.fr       */
+/*   Updated: 2022/11/21 11:40:07 by vimunoz-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,14 @@
 # include<unistd.h>
 # include<stdlib.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n);
+char	*ft_next_line(char *buff, char *line);
+char	*ft_next_buff(char *buff);
+char	*ft_strchr(char *s, int c);
+char	*ft_free(char **buff, char **buff2);
+char	*ft_strjoin(char *s1, char *s2);
+char	*ft_protect_join(char *buff, char *read);
+char	*ft_read_fd(int fd, char *buff, int bytes);
+char	*get_next_line(int fd);
 size_t	ft_strlen(const char *s);
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-char	*ft_strdup(const char *s1);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strchr(char *s,int c);
+void	*ft_calloc(size_t count, size_t size);
 #endif
